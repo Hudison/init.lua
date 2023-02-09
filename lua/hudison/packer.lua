@@ -51,6 +51,7 @@ require('packer').startup(function(use)
             { 'hrsh7th/cmp-path' }, -- Optional
             { 'saadparwaiz1/cmp_luasnip' }, -- Optional
             { 'hrsh7th/cmp-nvim-lua' }, -- Optional
+            { 'hrsh7th/cmp-nvim-lsp-signature-help' },
 
             -- Snippets
             { 'L3MON4D3/LuaSnip' }, -- Required
@@ -74,6 +75,8 @@ require('packer').startup(function(use)
     use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
     use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
     use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
+    use 'theprimeagen/harpoon' -- If you know, you know
+    use 'nvim-treesitter/playground'
 end)
 
 local group = vim.api.nvim_create_augroup("packer_user_config", { clear = true })

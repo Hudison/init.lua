@@ -108,6 +108,9 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 lsp.setup_nvim_cmp({
+	sources = {
+		{ name = 'nvim_lsp_signature_help' }
+	},
 	mapping = cmp_mappings
 })
 
