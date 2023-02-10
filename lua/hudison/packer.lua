@@ -77,6 +77,10 @@ require('packer').startup(function(use)
     use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
     use 'theprimeagen/harpoon' -- If you know, you know
     use 'nvim-treesitter/playground'
+    use 'tpope/vim-repeat'
+    use 'ggandor/lightspeed.nvim'
+    use 'nvim-telescope/telescope-file-browser.nvim'
+
 end)
 
 local group = vim.api.nvim_create_augroup("packer_user_config", { clear = true })
