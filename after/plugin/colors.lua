@@ -1,3 +1,7 @@
-require('tokyonight').setup()
 
-vim.cmd.colorscheme('tokyonight-night')
+require('onedark').setup {
+    style = 'deep'
+}
+require('onedark').load()
+
+-- vim.cmd.colorscheme('tokyonight-night')

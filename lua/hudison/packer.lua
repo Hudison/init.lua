@@ -6,6 +6,14 @@ vim.cmd [[packadd packer.nvim]]
 require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
+    --
+    -- use 'folke/tokyonight.nvim'
+    -- use 'rebelot/kanagawa.nvim'
+    -- use { 'catppuccin/nvim', as = 'catppuccin' }
+    -- use { 'rose-pine/neovim', as = 'rose-pine' }
+    -- use { 'projekt0n/github-nvim-theme', tag = 'v0.0.7' }
+    use 'navarasu/onedark.nvim'
+    -- use 'shaunsingh/moonlight.nvim'
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.1',
@@ -13,9 +21,10 @@ require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
-    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
-
-    use 'folke/tokyonight.nvim'
+    use { 'nvim-telescope/telescope-fzf-native.nvim',
+        run = 'make',
+        cond = vim.fn.executable 'make' == 1
+    }
 
     use {
         'nvim-treesitter/nvim-treesitter',
@@ -29,12 +38,6 @@ require('packer').startup(function(use)
         'nvim-treesitter/nvim-treesitter-textobjects',
         after = 'nvim-treesitter',
     }
-
-    use 'mbbill/undotree'
-
-    use 'tpope/vim-fugitive'
-    use 'tpope/vim-rhubarb'
-    use 'lewis6991/gitsigns.nvim'
 
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -60,32 +63,67 @@ require('packer').startup(function(use)
     }
 
     use {
-        "folke/which-key.nvim",
+        'folke/which-key.nvim',
         config = function()
             vim.o.timeout = true
             vim.o.timeoutlen = 300
-            require("which-key").setup {
+            require('which-key').setup {
                 -- your configuration comes here
                 -- or leave it empty to use the default settings
                 -- refer to the configuration section below
             }
         end
     }
+
+    use 'mbbill/undotree'
+    use 'tpope/vim-fugitive'
+    use 'tpope/vim-rhubarb'
+    use 'lewis6991/gitsigns.nvim'
     use 'nvim-lualine/lualine.nvim' -- Fancier statusline
     use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
-    use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
+    use 'numToStr/Comment.nvim' -- 'gc' to comment visual regions/lines
     use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
     use 'theprimeagen/harpoon' -- If you know, you know
     use 'nvim-treesitter/playground'
     use 'tpope/vim-repeat'
     use 'ggandor/lightspeed.nvim'
     use 'nvim-telescope/telescope-file-browser.nvim'
+    use 'echasnovski/mini.cursorword'
+    use "kkharji/sqlite.lua"
+    use 'nvim-tree/nvim-web-devicons'
+    use 'windwp/nvim-spectre'
+    use 'gnikdroy/projections.nvim'
+    use { "akinsho/toggleterm.nvim", tag = '*', config = function()
+        require("toggleterm").setup()
+    end }
+    use({
+        'kylechui/nvim-surround',
+        tag = '*', -- Use for stability; omit to use `main` branch for the latest features
+        config = function()
+            require('nvim-surround').setup({
+                -- Configuration here, or leave empty to use defaults
+            })
+        end
+    })
+
+    use {
+        'AckslD/nvim-neoclip.lua',
+        requires = {
+            { 'kkharji/sqlite.lua', module = 'sqlite' },
+            -- you'll need at least one of these
+            { 'nvim-telescope/telescope.nvim' },
+            -- {'ibhagwan/fzf-lua'},
+        },
+        config = function()
+            require('neoclip').setup()
+        end,
+    }
 
 end)
 
-local group = vim.api.nvim_create_augroup("packer_user_config", { clear = true })
-vim.api.nvim_create_autocmd("BufWritePost", {
-    command = "source <afile> | PackerSync",
-    pattern = "packer.lua", -- the name of your plugins file
+local group = vim.api.nvim_create_augroup('packer_user_config', { clear = true })
+vim.api.nvim_create_autocmd('BufWritePost', {
+    command = 'source <afile> | PackerSync',
+    pattern = 'packer.lua', -- the name of your plugins file
     group = group,
 })
