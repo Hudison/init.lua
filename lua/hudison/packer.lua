@@ -91,14 +91,14 @@ require('packer').startup(function(use)
     use 'ggandor/lightspeed.nvim'
     use 'nvim-telescope/telescope-file-browser.nvim'
     use 'echasnovski/mini.cursorword'
-    use "kkharji/sqlite.lua"
+    use 'kkharji/sqlite.lua'
     use 'nvim-tree/nvim-web-devicons'
     use 'windwp/nvim-spectre'
     use 'gnikdroy/projections.nvim'
     use 'gelguy/wilder.nvim'
 
-    use { "akinsho/toggleterm.nvim", tag = '*', config = function()
-        require("toggleterm").setup()
+    use { 'akinsho/toggleterm.nvim', tag = '*', config = function()
+        require('toggleterm').setup()
     end }
 
     use({
@@ -133,6 +133,13 @@ require('packer').startup(function(use)
             { 'nvim-lua/plenary.nvim' },
         }
     }
+
+    use({
+        'andrewferrier/debugprint.nvim',
+        config = function()
+            require('debugprint').setup()
+        end,
+    })
 end)
 
 local group = vim.api.nvim_create_augroup('packer_user_config', { clear = true })
