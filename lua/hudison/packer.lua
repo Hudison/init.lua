@@ -42,7 +42,7 @@ require('packer').startup(function(use)
     }
 
     use { 'nvim-treesitter/nvim-treesitter-context',
-        after = 'nevim-treesitter'
+        after = 'nvim-treesitter'
     }
 
     use {
