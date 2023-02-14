@@ -41,6 +41,10 @@ require('packer').startup(function(use)
         after = 'nvim-treesitter',
     }
 
+    use { 'nvim-treesitter/nvim-treesitter-context',
+        after = 'nevim-treesitter'
+    }
+
     use {
         'VonHeikemen/lsp-zero.nvim',
         requires = {
@@ -114,7 +118,7 @@ require('packer').startup(function(use)
     use {
         'AckslD/nvim-neoclip.lua',
         requires = {
-            { 'kkharji/sqlite.lua',           module = 'sqlite' },
+            { 'kkharji/sqlite.lua', module = 'sqlite' },
             -- you'll need at least one of these
             { 'nvim-telescope/telescope.nvim' },
             -- {'ibhagwan/fzf-lua'},
