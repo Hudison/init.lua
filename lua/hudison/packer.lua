@@ -6,6 +6,7 @@ vim.cmd [[packadd packer.nvim]]
 require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
+    use 'folke/neodev.nvim'
     --
     -- use 'folke/tokyonight.nvim' -- good
     -- use 'rebelot/kanagawa.nvim' -- ok but not much contrast
@@ -52,6 +53,9 @@ require('packer').startup(function(use)
             { 'neovim/nvim-lspconfig' }, -- Required
             { 'williamboman/mason.nvim' }, -- Optional
             { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+            { 'mfussenegger/nvim-dap' },
+            { 'jay-babu/mason-nvim-dap.nvim' },
+            { 'rcarriga/nvim-dap-ui' },
 
             -- Autocompletion
             { 'hrsh7th/nvim-cmp' }, -- Required

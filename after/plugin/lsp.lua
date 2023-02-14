@@ -123,6 +123,16 @@ require('mason').setup({
 	}
 })
 
+require("mason-nvim-dap").setup({
+	automatic_setup = true,
+})
+
+require('mason-nvim-dap').setup_handlers()
+
+require("dapui").setup()
+
+vim.keymap.set('n', '<leader>dap', require('dapui').toggle, { desc = 'Toggle [d][a][p]ui' })
+
 lsp.setup()
 
 vim.diagnostic.config({
