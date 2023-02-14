@@ -7,13 +7,15 @@ require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
     --
-    -- use 'folke/tokyonight.nvim'
-    -- use 'rebelot/kanagawa.nvim'
+    -- use 'folke/tokyonight.nvim' -- good
+    -- use 'rebelot/kanagawa.nvim' -- ok but not much contrast
     -- use { 'catppuccin/nvim', as = 'catppuccin' }
     -- use { 'rose-pine/neovim', as = 'rose-pine' }
     -- use { 'projekt0n/github-nvim-theme', tag = 'v0.0.7' }
-    use 'navarasu/onedark.nvim'
-    -- use 'shaunsingh/moonlight.nvim'
+    use 'navarasu/onedark.nvim' -- good colors and contrast
+    -- use 'shaunsingh/moonlight.nvim' -- good but it gets boring fast
+    -- use { 'arturgoms/moonbow.nvim' } -- a little better than gruvbox i think
+    -- use { 'ellisonleao/gruvbox.nvim' } -- fn and string have the same colocr, kinda meh
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.1',
