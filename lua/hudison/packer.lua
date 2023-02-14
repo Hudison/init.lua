@@ -96,9 +96,11 @@ require('packer').startup(function(use)
     use 'windwp/nvim-spectre'
     use 'gnikdroy/projections.nvim'
     use 'gelguy/wilder.nvim'
+
     use { "akinsho/toggleterm.nvim", tag = '*', config = function()
         require("toggleterm").setup()
     end }
+
     use({
         'kylechui/nvim-surround',
         tag = '*', -- Use for stability; omit to use `main` branch for the latest features
@@ -112,7 +114,7 @@ require('packer').startup(function(use)
     use {
         'AckslD/nvim-neoclip.lua',
         requires = {
-            { 'kkharji/sqlite.lua', module = 'sqlite' },
+            { 'kkharji/sqlite.lua',           module = 'sqlite' },
             -- you'll need at least one of these
             { 'nvim-telescope/telescope.nvim' },
             -- {'ibhagwan/fzf-lua'},
@@ -122,6 +124,15 @@ require('packer').startup(function(use)
         end,
     }
 
+    use {
+        'sudormrfbin/cheatsheet.nvim',
+
+        requires = {
+            { 'nvim-telescope/telescope.nvim' },
+            { 'nvim-lua/popup.nvim' },
+            { 'nvim-lua/plenary.nvim' },
+        }
+    }
 end)
 
 local group = vim.api.nvim_create_augroup('packer_user_config', { clear = true })
