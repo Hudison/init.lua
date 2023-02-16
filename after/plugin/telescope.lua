@@ -1,11 +1,12 @@
 local builtin = require('telescope.builtin')
 pcall(require('telescope').load_extension, 'fzf')
-pcall(require('telescope').load_extension, 'file_browser')
+-- pcall(require('telescope').load_extension, 'file_browser')
 pcall(require('telescope').load_extension, 'neoclip')
 pcall(require('telescope').load_extension, 'projections')
 
 -- See `:help telescope.builtin`
-vim.keymap.set('n', '<leader>pb', require('telescope').extensions.file_browser.file_browser, { desc = 'Telescope File Browser' })
+-- vim.keymap.set('n', '<leader>pb', require('telescope').extensions.file_browser.file_browser,
+--     { desc = 'Telescope File Browser' })
 vim.keymap.set('n', '<leader>?', builtin.oldfiles, { desc = '[?] Find recently opened files' })
 vim.keymap.set('n', '<leader><space>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
