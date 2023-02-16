@@ -104,6 +104,7 @@ require('packer').startup(function(use)
     use 'windwp/nvim-spectre'
     use 'gnikdroy/projections.nvim'
     use 'gelguy/wilder.nvim'
+    use { 'echasnovski/mini.sessions', branch = 'stable' }
 
     use { 'akinsho/toggleterm.nvim', tag = '*', config = function()
         require('toggleterm').setup()
