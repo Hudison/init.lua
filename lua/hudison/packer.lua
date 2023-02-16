@@ -1,5 +1,3 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
@@ -105,6 +103,7 @@ require('packer').startup(function(use)
     use 'gnikdroy/projections.nvim'
     use 'gelguy/wilder.nvim'
     use { 'echasnovski/mini.sessions', branch = 'stable' }
+    use 'christoomey/vim-tmux-navigator'
 
     use { 'akinsho/toggleterm.nvim', tag = '*', config = function()
         require('toggleterm').setup()
