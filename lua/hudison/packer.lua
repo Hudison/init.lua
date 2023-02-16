@@ -102,8 +102,9 @@ require('packer').startup(function(use)
     use 'windwp/nvim-spectre'
     use 'gnikdroy/projections.nvim'
     use 'gelguy/wilder.nvim'
-    use { 'echasnovski/mini.sessions', branch = 'stable' }
     use 'christoomey/vim-tmux-navigator'
+
+    use 'rmagatti/auto-session'
 
     use { 'akinsho/toggleterm.nvim', tag = '*', config = function()
         require('toggleterm').setup()
@@ -122,7 +123,7 @@ require('packer').startup(function(use)
     use {
         'AckslD/nvim-neoclip.lua',
         requires = {
-            { 'kkharji/sqlite.lua', module = 'sqlite' },
+            { 'kkharji/sqlite.lua',           module = 'sqlite' },
             -- you'll need at least one of these
             { 'nvim-telescope/telescope.nvim' },
             -- {'ibhagwan/fzf-lua'},

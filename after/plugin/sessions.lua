@@ -1,3 +1,3 @@
-require('mini.sessions').setup({
-	autoread = true
-})
+require('auto-session').setup {
+	log_level = 'error',
+}
