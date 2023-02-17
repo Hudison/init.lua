@@ -51,6 +51,8 @@ require('packer').startup(function(use)
             { 'neovim/nvim-lspconfig' }, -- Required
             { 'williamboman/mason.nvim' }, -- Optional
             { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+
+            -- DAP
             { 'mfussenegger/nvim-dap' },
             { 'jay-babu/mason-nvim-dap.nvim' },
             { 'rcarriga/nvim-dap-ui' },
@@ -67,6 +69,7 @@ require('packer').startup(function(use)
             -- Snippets
             { 'L3MON4D3/LuaSnip' }, -- Required
             { 'rafamadriz/friendly-snippets' }, -- Optional
+            { 'j-hui/fidget.nvim' },
         }
     }
 
